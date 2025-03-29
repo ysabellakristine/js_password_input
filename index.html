@@ -50,9 +50,15 @@
                 // function for login (no database since no php)
                 function login() {
                     let password = document.getElementById("password").value;   //gets password input
-        
+                    let email = document.getElementById("email").value;         //gets email input
+
+                    // check if email is empty
+                    if (email.trim() === "") {
+                        alert("CAUTION: Email cannot be empty!");
+                        return;                                                 // Stop function execution
+                }
                     // checks if password is at least 8 characters long message will appear otherwise
-                    if (password.length < 8) {                                          
+                    if (password.length < 8 ) {                                          
                         alert("CAUTION: Password must be at least 8 characters long!");
                     } else {
                         alert("Your Login is successful!");                             
