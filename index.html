@@ -9,36 +9,58 @@
     <!--installing tailwind / not for development purposes-->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="styles.css" rel="stylesheet">
-
-    <!-- Reference JavaScript file -->
-    <script src="script.js" defer></script>
-
     <!-- Name on tab -->
-    <title>Buttons Three</title>
+    <title>Verse the Bible</title>
     </head>
     <!--Stand in for background for now-->
-    <body class="bg-pink-800">
+    <body class="h-screen bg-gradient-to-b from-orange-400 to-green-400">
 
           <!--BODY SECTION-->
-          <div class="container mx-auto my-12 w-50 p-5 bg-black border-4 border-white border-solid text-3xl text-white">
 
-            <h1 class="text-center text-yellow-200 font-comic"> Hi! I'm Ysabella Kristine!</h1>
-            <h2 class="text-left font-comic"> Bucket List</h2> 
-            <ul class="list-disc pl-5 font-comic" id="bucket_List"> 
-                <li>I want to be able to spend money with no guilt</li>
-                <li>I want to go to different countries</li>
-                <li>I want to adopt an aspin</li>
-                <li>I want to bring my family to another country</li>
-            </ul> 
+            <!--FLEXBOX TO CENTER-->
+            <div class="flex items-center justify-center mt-20">
+        
+            <!--LOGIN-->
+            <div class="bg-white shadow-lg rounded-lg p-8 w-96">
+                <h2 class="text-2xl font-bold text-center text-purple-700">Login</h2>
+                
+                <!--adds margin to forms-->
+                <form class="mt-4">
+                    <!--Email field-->
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-600 font-medium text-pink-700">Email</label>
+                        <input type="email" id="email" class="w-full p-2 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    <!--Password field-->
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-600 font-medium text-orange-700">Password</label>
+                        <input type="password" id="password" class="w-full p-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    </div>
+        
+                    <div class="flex justify-center">
+                <button id="loginBtn" class="bg-blue-500 shadow-lg rounded-lg text-white px-4 py-1 hover:bg-green-600 transition">Login</button>
+            </div>
         </div>
+    </div>
 
-        <div class="container mx-auto my-12 w-50 p-5 border-solid text-3xl text-black">
+        <!--Javascript for buttons-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                
 
-        <input type="text" id="bucket_Input" placeholder="Enter new bucketlist item"  class="border border-gray-300 p-2 text-center"> <br> <br>
-            <button onclick="add_Item()" class="bg-gray-500 text-white px-4 py-1 hover:bg-green-600 transition">Add Item</button>
-            <button onclick="changeFont_Family()" class="bg-gray-500 text-white px-4 py-1 hover:bg-green-600 transition">Change da Font to Papyrus</button>
-            <button onclick="make_Bold()" class="bg-gray-500 text-white px-4 py-1 hover:bg-green-600 transition">Make Bold</button>
-        </div>
+                // function for login (no database since no php)
+                function login() {
+                    let password = document.getElementById("password").value;   //gets password input
+        
+                    // checks if password is at least 8 characters long message will appear otherwise
+                    if (password.length < 8) {                                          
+                        alert("CAUTION: Password must be at least 8 characters long!");
+                    } else {
+                        alert("Your Login is successful!");                             
+                    }
+                }
+                document.getElementById("loginBtn").addEventListener("click", login);
+            });
+            
+        </script>
       </body>
       </html>
